@@ -1,5 +1,6 @@
 import scrapy
 from scrapy.http import FormRequest
+from steamCrawler.items import SteamcrawlerItem
 
 class SteamspiderSpider(scrapy.Spider):
     name = 'steamSpider'
@@ -37,6 +38,8 @@ class SteamspiderSpider(scrapy.Spider):
             yield scrapy.Request(url = app_url, callback = self.parse_content, dont_filter = True, meta={'app_id':str(app_id)})
 
     def parse_content(self, response):
+        item = SteamcrawlerItem()
+
         game_id = response.meta['app_id']
         game_data = response.json()
         game = game_data[game_id]['data']
@@ -45,8 +48,17 @@ class SteamspiderSpider(scrapy.Spider):
         price_overview = game['price_overview']
         genres = game['genres']
         release_date = game['release_date']
+        # currency = price_overview['currency']
+        # origin_price = price_overview['initial']
+        # current_price = price_overview['final']
+        # discount_pr = price_overview['discount_percent']
+        # print(name, steam_appid, price_overview, genres, release_date)
 
-        print(name, steam_appid, price_overview, genres, release_date)
-        # for k, v in app_data.items():
-        #     print(v)
-        #     print(type(v))
+        item = SteamcrawlerItem()
+        item['name'] = name
+        item['steam_appid'] = steam_appid
+        item['price_overview'] = price_overview
+        item['genres'] = genres
+        item['release_date'] = release_date
+
+        yield item

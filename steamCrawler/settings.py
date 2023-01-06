@@ -25,7 +25,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -62,9 +62,9 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'steamCrawler.pipelines.SteamcrawlerPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'steamCrawler.pipelines.SteamcrawlerPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -90,3 +90,15 @@ ROBOTSTXT_OBEY = False
 # Set settings whose default value is deprecated to a future-proof value
 REQUEST_FINGERPRINTER_IMPLEMENTATION = '2.7'
 TWISTED_REACTOR = 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'
+
+# Postgres database setting
+# POSTGRES_HOST = 'localhost'
+# POSTGRES_DATABASE = 'crawlers'
+# POSTGRES_USERNAME = 'postgres'
+# POSTGRES_PASSWORD = '123456'
+# POSTGRES_PORT = '5432'
+# POSTGRES_OPTIONS = '-c search_path=public'
+
+# log setting
+# Minimum level to log. Available levels are: CRITICAL, ERROR, WARNING, INFO, DEBUG.
+LOG_LEVEL = 'WARNING'
