@@ -99,6 +99,19 @@ TWISTED_REACTOR = 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'
 # POSTGRES_PORT = '5432'
 # POSTGRES_OPTIONS = '-c search_path=public'
 
+# Redis database setting
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = '6379'
+REDIS_PASSWORD = '123456'
+
+# Mongo database setting
+MONGODB_HOST = "127.0.0.1"
+MONGODB_PORT = 27017
+MONGODB_DB = "crawlers"
+MONGODB_COLLECTION = "games"
+MONGODB_USERNAME = 'root'
+MONGODB_PASSWORD = 123456
+
 # log setting
 # Minimum level to log. Available levels are: CRITICAL, ERROR, WARNING, INFO, DEBUG.
 LOG_LEVEL = 'WARNING'

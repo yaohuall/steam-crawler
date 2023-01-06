@@ -6,19 +6,22 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+from scrapy.exceptions import DropItem
 from steamCrawler import settings
-import psycopg2
+import pymongo
 
 class SteamcrawlerPipeline:
     def __init__(self):
-        self.connect = psycopg2.connect(
-                        host=settings.POSTGRES_HOST, 
-                        port=settings.POSTGRES_PORT, 
-                        user=settings.POSTGRES_USERNAME, 
-                        password=settings.POSTGRES_PASSWORD, 
-                        database=settings.POSTGRES_DATABASE,
-                        options=settings.POSTGRES_OPTIONS
-                    )
-
+        self.mongo_con = pymongo.MongoClient(f'mongodb://{settings.MONGODB_USERNAME}:{settings.MONGODB_PASSWORD}@{settings.MONGODB_HOST}:{settings.MONGODB_PORT}/'
+                                            )
+        self.mongo_db = self.mongo_con[settings.MONGODB_DB]
+        self.collection = self.mongo_db[settings.MONGODB_COLLECTION]
+        
     def process_item(self, item, spider):
+        if not item:
+            raise DropItem(f"Missing data{item}!")
+
+        else:
+            self.collection.insert_one(dict(item))
+
         return item

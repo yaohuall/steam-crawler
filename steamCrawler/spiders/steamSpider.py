@@ -14,7 +14,7 @@ class SteamspiderSpider(scrapy.Spider):
             'clanAnnouncementGID': '3016840454305565994',
             'flavor': 'popularpurchaseddiscounted', # sale category: popularpurchaseddiscounted, contenthub_topsellers, topwishlisted
             'start': '0',
-            'count': '50', # numbers of games
+            'count': '10', # numbers of games
             'tabuniqueid': '6',
             'sectionuniqueid': '13268',
             'return_capsules': 'true',
