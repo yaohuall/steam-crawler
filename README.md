@@ -1,8 +1,7 @@
 # steam-crawler
 steam crawler microservice
 
-##
-redis:<br>
+##redis
 You can add `redis.conf` to `./redis-conf/` for redis settings
 
 ### reference
