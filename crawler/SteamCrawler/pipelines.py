@@ -7,7 +7,7 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 from scrapy.exceptions import DropItem
-from steamCrawler import settings
+from SteamCrawler import settings
 import pymongo
 
 class SteamcrawlerPipeline:

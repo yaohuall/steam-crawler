@@ -7,10 +7,10 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'steamCrawler'
+BOT_NAME = 'SteamCrawler'
 
-SPIDER_MODULES = ['steamCrawler.spiders']
-NEWSPIDER_MODULE = 'steamCrawler.spiders'
+SPIDER_MODULES = ['SteamCrawler.spiders']
+NEWSPIDER_MODULE = 'SteamCrawler.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -63,7 +63,7 @@ DOWNLOAD_DELAY = 3
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'steamCrawler.pipelines.SteamcrawlerPipeline': 300,
+   'SteamCrawler.pipelines.SteamcrawlerPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -114,4 +114,4 @@ MONGODB_PASSWORD = 123456
 
 # log setting
 # Minimum level to log. Available levels are: CRITICAL, ERROR, WARNING, INFO, DEBUG.
-LOG_LEVEL = 'WARNING'
+LOG_LEVEL = 'INFO'

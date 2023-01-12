@@ -13,4 +13,5 @@ class SteamcrawlerItem(scrapy.Item):
     price_overview = scrapy.Field()
     genres = scrapy.Field()
     release_date = scrapy.Field()
+    crawl_date = scrapy.Field()
     
