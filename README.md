@@ -9,6 +9,7 @@ For external IP access, set host to DNS name `host.docker.internal` which resolv
 
 ### steam data reference
 https://partner.steamgames.com/doc/webapi_overview
+<br>
 https://wiki.teamfortress.com/wiki/User:RJackson/StorefrontAPI#App_info
 
 ### motor reference
