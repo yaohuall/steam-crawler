@@ -1,4 +1,4 @@
-# steam-fastAPI-api
+# steam-data-microservices
 steam data microservice
 
 ## redis
@@ -14,3 +14,6 @@ https://wiki.teamfortress.com/wiki/User:RJackson/StorefrontAPI#App_info
 
 ### motor reference
 https://motor.readthedocs.io/en/stable/
+
+### Apache Kafka reference
+https://github.com/bitnami/containers/tree/main/bitnami/kafka#how-to-use-this-image
